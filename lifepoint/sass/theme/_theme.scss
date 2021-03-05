@@ -1,0 +1,672 @@
+//Fonts
+h1,h2,h3,h4,h5{
+  font-family: 'Montserrat', sans-serif;
+  color:#444;
+}
+
+p, em, strong, a, ul.ul1, ul li{
+  font-family: 'Montserrat', sans-serif;
+  color:#444;
+}
+
+//Top Nav
+ul#main-menu li a {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+// Header Section
+.custom-logo-link {
+	width: 20%;
+}
+.navbar {
+	background-color: green;
+}
+.bg-primary {
+	background-color: #efefef !important;
+}
+.navbar-dark .navbar-nav {
+    .nav-link {
+      color: #444;
+      transition: color 0.5s ease-out;
+    }
+    .active > .nav-link, .nav-link:hover {
+      color: #aec40b;
+    }
+  }
+
+//Slider section
+figcaption.wp-caption-text{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 40%; 
+  position: absolute;
+  padding: 30px;
+  top: 25%;
+  left: 20%;
+ }
+
+ figcaption.wp-caption-text h1,
+ figcaption.wp-caption-text h5,
+ figcaption.wp-caption-text p{
+    color:#fff;
+ }
+
+ figcaption.wp-caption-text h1 {
+  font-weight:800;
+  margin-bottom: -4px; 
+ }
+
+ span.slider-border{
+  border-bottom: 7px solid #9cc222;
+  content: "";
+  display: block;
+  margin: 12px 0 12px 0;  
+  width: 60%;
+ }
+
+ a.slider-btn {
+  transition: 0.5s;
+  background-color: #9cc222;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 800;
+  /* margin-left: 70px; */
+  padding: 8px 24px;
+  font-size: 13px!important;
+  line-height: 1.5!important;
+  border: 2px solid #fff;
+}
+
+a.slider-btn:hover{
+  text-decoration: none;
+  background-color: #8daa2e;
+}
+
+
+
+
+//Flex Text Boxes Top
+.four-boxes{
+  display: flex;
+  // justify-content: center;
+}
+
+.four-boxes li {
+  list-style-type: none;
+  text-align: center;
+  padding: 80px 0;
+  min-height: 350px;
+  min-width: 25%;
+    &.oddpost {
+      -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+      background: #93A844;
+      transition: 0.3s;
+      &:hover {
+        background: #A4BF45;
+      }
+    }
+    &.evenpost {
+      -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+      background: #A4BF45;
+      transition: 0.3s;
+      &:hover {
+        background: #93A844;
+      }
+    }
+    h5{
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;   
+    }
+    img {
+      width: 20%;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+  }
+
+
+/*
+
+Media Queries - Four Boxes
+
+*/
+@include media-breakpoint-down(sm) {
+  //This property makes the boxes a column stack when responsive.  
+  .four-boxes{
+    margin-top: -30px !important;
+    flex-direction: column;
+  }
+  .four-boxes li.oddpost,
+  .four-boxes li.evenpost{
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+// li.boxes {
+//     list-style-type: none;
+//     float: left;
+//     min-width: 24%;
+//     min-height: 100px;
+//     text-align: center;
+//     padding: 80px 0;
+//     min-height: 350px;
+//     margin: 0px;
+//     &.oddpost {
+//       -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+//       clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+//       background: #93A844;
+//       transition: 0.3s;
+//       &:hover {
+//         background: #A4BF45;
+//       }
+//     }
+//     &.evenpost {
+//       -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+//       clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+//       background: #A4BF45;
+//       transition: 0.3s;
+//       &:hover {
+//         background: #93A844;
+//       }
+//     }
+//     h5{
+//       color: #fff;
+//       font-size: 16px;
+//       font-weight: 700;   
+//     }
+//     img {
+//       width: 20%;
+//       display: block;
+//       margin: 0 auto;
+//       margin-bottom: 30px;
+//     }
+//   }
+
+
+  //This is not working.
+  li.boxes.oddpost:nth-child(2) img{
+    width: 26% !important;
+  } 
+  .four-boxes {
+    margin-top: -120px;
+  }
+
+
+
+
+// Btn play
+
+$duration: .20;
+$easing: ease-in-out;
+
+[data-wipe] {  
+  
+  margin-top: 20px;
+  display: inline-block;
+  padding: 8px 20px;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  // letter-spacing: .1em;
+  text-align: left;
+  color: #fff;
+  overflow: hidden;
+
+  
+  &:before, &:after {
+    content: attr(data-wipe);
+    padding-top: inherit;
+    padding-bottom: inherit;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    color: #aec40b;
+    background: #fff;
+    font-weight: 700;
+  }
+  
+  &:before {
+    left: 0;
+    text-indent: 18px;
+    width: 0;
+  }
+  
+  &:after {
+    padding-left: inherit;
+    padding-right: inherit;
+    left: 100%;
+    text-indent: calc(-100% - 36px);
+    transition: $duration + s $easing;
+  }
+  
+  &:hover {
+    &:before {
+      width: 100%;
+      transition: width $duration + s $easing;
+    }
+    
+    &:after {
+      left: 0;
+      text-indent: 0;
+      transition: 0s $duration + s $easing;
+    }
+  }
+}
+
+[contact-us] {  
+  
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 20px;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #a4bf45;
+  border-radius: 3px;
+  text-align: left;
+  color: #a4bf45;
+  overflow: hidden;
+  
+
+  
+  &:before, &:after {
+    content: attr(contact-us);
+    padding-top: inherit;
+    padding-bottom: inherit;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    color: #fff;
+    background: #a4bf45;
+    font-weight: 700;
+  }
+  
+  &:before {
+    left: 0;
+    text-indent: 18px;
+    width: 0;
+  }
+  
+  &:after {
+    padding-left: inherit;
+    padding-right: inherit;
+    left: 100%;
+    text-indent: calc(-100% - 36px);
+    transition: $duration + s $easing;
+  }
+  
+  &:hover {
+    &:before {
+      width: 100%;
+      transition: width $duration + s $easing;
+    }
+    
+    &:after {
+      left: 0;
+      text-indent: 0;
+      transition: 0s $duration + s $easing;
+    }
+  }
+}
+
+.border-green{
+  border: 1px solid #444;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.22); 
+  box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.22);
+}
+
+
+// How we can help section
+.left-tri{
+  -webkit-clip-path: polygon(100% 100%, 0 21%, 0 100%);
+  clip-path: polygon(100% 100%, 0 21%, 0 100%);
+  background: #FEDC61;
+  height: 100px;
+  width:50%;
+  float: left;
+  border: 2px solid #FEDC61;
+  // background: #84ac00;
+  // border: #84ac00;
+}
+
+.right-tri{
+  -webkit-clip-path: polygon(100% 100%, 100% 28%, 0 100%);
+  clip-path: polygon(100% 100%, 100% 28%, 0 100%);
+  background: #FEDC61;
+  height: 100px;
+  width:50%;
+  float: right;
+  border: 2px solid #FEDC61;
+  // background: #84ac00;
+  // border: #84ac00;
+
+}
+
+section.how-we-can-help{
+  background-color: #FEDC61;
+  // background-color: #84ac00;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 128px;
+  padding-bottom: 58px;
+  margin-top: -1px;
+}
+
+
+
+section.how-we-can-help h2,
+section.how-we-can-help h5,
+section.how-we-can-help p{
+  // color:#fff;
+  color:#000;
+  margin-bottom: 30px;
+}
+
+section.how-we-can-help hr{
+  // border-top: 3px solid #8daa2e;
+  // border-top: 3px solid #fff;
+  border-top: 3px solid #000;
+}
+
+.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 80px;
+}
+
+
+section.how-we-can-help input.wpcf7-form-control.wpcf7-submit,
+.page-id-31 input.wpcf7-form-control.wpcf7-submit{
+  background-color: #9cc222;
+  
+
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 800;
+  padding: 8px 24px;
+  font-size: 13px!important;
+  line-height: 1.5!important;
+  border: 2px solid #fff;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  transition: 0.5s;
+}
+
+section.how-we-can-help input.wpcf7-form-control.wpcf7-submit:hover{
+  text-decoration: none;
+  background-color: #8daa2e;
+}
+
+
+section.how-we-can-help:after{
+  content: '';
+  position: absolute;
+  bottom: -10% !important;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background-color: #FEDC61;
+  // background-color: #84ac00;
+  -webkit-transform: skew(0deg,-3deg);
+  transform: skew(0deg,-3deg);
+  border-bottom: 2px solid #fff;
+}
+
+.paralax-image {  
+  background: linear-gradient(rgba(249, 119, 76,.75), rgba(128, 42, 12,.85));
+  background-image: url("https://lifepointclinic.com.au/wp-content/uploads/2018/11/Slider-paralax.jpg");
+  /* Set a specific height */
+  height: 400px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.paralax-image h2 {
+  text-align: center;
+  color: #fff;
+  margin-top: 130px;
+}
+
+.paralax-image p{
+  color: #fff;
+}
+
+a.paralax-btn {
+  background-color: #9cc222;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 800;
+  margin-left: 70px;
+  padding: 8px 24px;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  transition: 0.5s;
+  border: 2px solid #fff;
+}
+
+a.paralax-btn:hover{
+  text-decoration: none;
+  background-color: #8daa2e;
+}
+
+
+
+#app-form {
+  // overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+
+// Interior Pages
+
+.page-template-default .wrapper{
+  margin-top:50px;
+}
+
+h1.entry-title {
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.superLink {
+  color: #000!important;
+  font-weight: 800 !important;
+}
+
+strong.white {
+  color: #fff;
+}
+
+
+//Footer Section
+
+
+footer:before {
+  content: '';
+  position: absolute;
+  bottom: 85%;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background-color: #323232;
+  -webkit-transform: skew(0deg,-3deg);
+  transform: skew(0deg,-3deg);
+  border-top: 2px solid #fff;
+}
+
+
+footer{
+  margin-top: 0px;
+  position: relative;
+  background-color: #323232;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+footer p,
+footer a,
+footer h5{
+  color:#fff;
+}
+
+img.footer-logo {
+  max-height: 90px;
+  margin-left: -20px;
+}
+
+
+// Latest News Footer
+
+.latest-news-footer h3{
+  color:#fff;
+  font-size: 18px;
+  margin-top: 108px;
+}
+
+.latest-news-footer hr{
+ border-top: 1px solid #fff;
+}
+
+.latest-news-footer .thumbnail-size-small{
+  width: 10%;
+}
+
+footer i.fa {
+  background: aquamarine;
+width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 3px 3px 0;
+  padding: 0 0px 0 0;
+      background-color: rgba(0, 0, 0, 0.3);
+}
+
+footer ul {
+  margin-left: -20px;
+}
+
+
+
+footer .menu ul li{
+  list-style-type: none;
+}
+
+footer .menu ul li a{
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+footer a:hover{
+  color: #aec40b;
+}
+
+.copyright-section {
+  background-color: #8daa2e;
+  padding: 20px 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+span.navbar-toggler-icon {
+  color: #fff;
+  background: #93A844;
+}
+
+
+a.privacy_policy{
+  color: #fff;
+}
+
+
+/*
+
+Media Queries - All Styles
+
+*/
+@include media-breakpoint-down(sm) {
+
+  .img-fluid {
+    max-width: 260%;
+  }
+
+  figcaption.wp-caption-text {
+    width: 60%;
+    position: absolute;
+    padding: 20px;
+    top: 10%;
+    left: 21%;
+  }
+  figcaption.wp-caption-text h1,
+  figcaption.wp-caption-text h5{
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+  span.slider-border,
+  figcaption.wp-caption-text p{
+    display: none;
+  }
+  a.slider-btn{
+    
+    padding: 4px 12px;
+    font-size: 9px!important;
+  }
+
+  // How we can help
+
+  section.how-we-can-help h2{
+    font-size:30px;
+  }
+
+  section.how-we-can-help input.wpcf7-form-control.wpcf7-submit{
+    position: absolute;
+    display: block;
+    z-index: 1;
+  }
+
+  .latest-news-footer h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 28px;
+}
+
+a.paralax-btn{
+  margin-left: 50px;
+}
+
+}
